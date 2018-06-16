@@ -11,6 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', array('uses' => 'LoginController@showLogin'));
+
+// route to show the login form
+Route::get('/login', array('as' => 'login','uses' => 'LoginController@showLogin'));
+// route to process the form
+Route::post('/login', array('uses' => 'LoginController@doLogin'));
+
+Route::get('/welcome', ['as' => 'welcome', 'middleware' => 'isLoggedin',  function(){
+  return view('welcome');
+}]);
+
+Route::get('logout', ['uses' => 'LoginController@doLogout']);
+
+use App\Employee;
+
+Route::get('/employee',
+      [
+        'middleware' => 'isLoggedin',
+        'uses' => 'employeeController@index',
+          // function(){
+          //   return view('employee.index');
+          // }
+      ]
+)->name('employee');
