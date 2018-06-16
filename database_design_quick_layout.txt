@@ -1,0 +1,74 @@
+DB: employees
+
+USERS
+*****
+- id
+- name
+- username
+- password
+- email
+- tell
+- birthday
+- remember_token
+- admin_right
+- created
+- modified
+
+LIKES
+*****
+- id
+- employee_id
+- employee_liked_id
+- created
+
+REVIEWS
+*******
+- id
+- employee_id
+- reviewer_id
+- comment
+- modified
+- created
+
+
+/*
+from blog
+$table->increments('id')->unique();
+$table->string('title', 100);
+$table->text('content');
+$table->dateTime('created');
+$table->dateTime('modified');
+*/
+
+/*
+laravel login
+$table->increments('id');
+
+$table->string('name', 50);
+$table->string('username', 50);
+$table->string('email', 350);
+$table->string('password', 64);
+
+  $table->string('remember_token', 100)->nullable();
+
+$table->timestamps();
+*/
+
+/*
+employee_larvel USERS
+Schema::create('users', function (Blueprint $table) {
+    $table->increments('id')->unique();
+    $table->string('name', 100);
+    $table->string('username', 100);
+    $table->string('password', 100);
+    $table->string('email', 100);
+    $table->string('tell', 100);
+    $table->dateTime('birthday', 100);
+
+      $table->string('remember_token', 100)->nullable();
+
+    $table->boolean('admin_right');
+    $table->dateTime('modified');
+    $table->dateTime('created');
+});
+*/
