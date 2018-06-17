@@ -20,6 +20,7 @@ same as my SES project, but with the Larvel frame work:
 ## Functions
 + employee list/edit/add
 + phonebook of employees (email/tell) search
++ Employee review (like)
 + password reset by admin users
 
 ## Some info
