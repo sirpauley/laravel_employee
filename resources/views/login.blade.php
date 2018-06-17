@@ -16,7 +16,7 @@
     @if (!$errors->isEmpty())
 
       <div class="alert bg-danger" role="alert"><em class="fa fa-minus-circle mr-2"></em>
-        {{ $errors->first('email') }}
+        {{ $errors->first('username') }}
         {{ $errors->first('password') }}
       <a href="#" class="float-right"><em class="fa fa-remove"></em></a></div>
 

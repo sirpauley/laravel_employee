@@ -6,6 +6,6 @@ same as my SES project, but with the Larvel frame work:
 1. Configure database setting in .env
 2. ```php artisan migrate``` (option reverse migration ``` php artisan migrate:reset ```)
 3. ``` php artisan db:seed ``` Add an ADMIN user to database
- + username: 
- + Password:
+ + username: admin
+ + Password: admin
 4. 
