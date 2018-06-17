@@ -11,6 +11,9 @@
 |
 */
 
+/************************************************************
+* LOGIN
+************************************************************/
 Route::get('/', array('uses' => 'LoginController@showLogin'));
 
 // route to show the login form
@@ -24,54 +27,46 @@ Route::get('/welcome', ['as' => 'welcome', 'middleware' => 'isLoggedin',  functi
 
 Route::get('logout', ['uses' => 'LoginController@doLogout'])->name('logout');
 
+/************************************************************
+* EMPLOYEES
+************************************************************/
 use App\Employee;
 
 //employee table & controls
-Route::get('/employee',
-      [
-        'middleware' => 'isLoggedin',
-        'uses' => 'employeeController@index',
-      ]
-)->name('employee');
-
+Route::get('/employee', ['middleware' => 'isLoggedin', 'uses' => 'employeeController@index',])->name('employee');
 
 //add a new employee
-Route::get('/employee/add',
-      [
-        'middleware' => 'isLoggedin',
-        'uses' => 'employeeController@add',
-      ]
-)->name('new employee');
+Route::get('/employee/add', ['middleware' => 'isLoggedin', 'uses' => 'employeeController@add',])->name('new employee');
 
 //create the new employee
 //add a new employee
-Route::post('/employee/add',
-      [
-        'middleware' => 'isLoggedin',
-        'uses' => 'employeeController@addEmployee',
-      ]
-)->name('new employee');
+Route::post('/employee/add', ['middleware' => 'isLoggedin', 'uses' => 'employeeController@addEmployee',])->name('new employee');
 
 //view employee details
-Route::get('/employee/details/{id}',
-      [
-        'middleware' => 'isLoggedin',
-        'uses' => 'employeeController@details',
-      ]
-)->name('employee details');
+Route::get('/employee/details/{id}', ['middleware' => 'isLoggedin', 'uses' => 'employeeController@details',])->name('employee details');
 
 //view employee details
-Route::get('/employee/edit/{id}',
-      [
-        'middleware' => 'isLoggedin',
-        'uses' => 'employeeController@editPage',
-      ]
-)->name('employee edit');
+Route::get('/employee/edit/{id}', ['middleware' => 'isLoggedin', 'uses' => 'employeeController@editPage',])->name('employee edit');
 
 //view employee details
-Route::post('/employee/edit/{id}',
-      [
-        'middleware' => 'isLoggedin',
-        'uses' => 'employeeController@saveEdit',
-      ]
-)->name('employee edit save');
+Route::post('/employee/edit/{id}', ['middleware' => 'isLoggedin', 'uses' => 'employeeController@saveEdit',])->name('employee edit save');
+
+/************************************************************
+* STATISTICS
+************************************************************/
+
+/************************************************************
+* PHONEBOOK
+************************************************************/
+//employee table & controls
+Route::get('/phonebook', ['middleware' => 'isLoggedin', 'uses' => 'phonebookController@index',])->name('phonebook');
+
+Route::get('/phonebook/details/{id}', ['middleware' => 'isLoggedin', 'uses' => 'phonebookController@details',])->name('phonebook details');
+
+/************************************************************
+* LEAVE A REVIEWs
+************************************************************/
+
+/************************************************************
+* PASSWORD
+************************************************************/

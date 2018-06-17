@@ -70,7 +70,7 @@ class employeeController extends Controller
   }
 
   public function details($id){
-    //fetch post data
+    //fetch employee data
     $employee = Employee::find($id);
 
     //pass employee data to view and load list view
@@ -79,7 +79,7 @@ class employeeController extends Controller
   }
 
   public function editPage($id){
-    //fetch post data
+    //fetch employee data
     $employee = Employee::find($id);
 
     //pass employee data to view and load list view

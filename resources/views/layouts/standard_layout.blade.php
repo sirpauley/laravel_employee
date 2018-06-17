@@ -52,7 +52,7 @@
 //   case 'PASSWORD UPDATE':
 //     $passwordActive = 'active';
 //     break;
-//   case 'EMPLOYEE REVIEW':
+//   case 'EMPLOYEE REVIEWs':
 //     $reviewActive = 'active';
 //     break;
 // }
@@ -60,7 +60,6 @@
 
     {{ $employeeActive    = '' }}
     {{ $statisticActive   = '' }}
-    {{ $jobLevelActive    = '' }}
     {{ $phoneBookActive   = '' }}
     {{ $reviewActive      = '' }}
     {{ $passwordActive    = '' }}
@@ -73,6 +72,16 @@
           {{ $employeeActive = 'active' }}
           @break
 
+			<!-- STATISTICS -->
+
+			@case('phonebook')
+			@case('phonebook details')
+				{{ $phoneBookActive = 'active'}}
+				@break
+
+			<!-- reviews -->
+			<!-- password -->
+
     @endswitch
 
     <nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2">
@@ -82,8 +91,7 @@
       <ul class="nav nav-pills flex-column sidebar-nav">
         <li class="nav-item"><a class="nav-link {{ $employeeActive }}" href="{{ route('employee') }}"><em class="fa fa-user"></em> Employees <span class="sr-only">(current)</span></a></li>
         <li class="nav-item"><a class="nav-link <?php //echo $statisticActive; ?>" href="statistics.php"><em class="fa fa-line-chart"></em> Statistics</a></li>
-        <li class="nav-item"><a class="nav-link <?php //echo $jobLevelActive; ?>" href="jobLevel.php"><em class="fa fa-bar-chart"></em> Job level</a></li>
-        <li class="nav-item"><a class="nav-link <?php //echo $phoneBookActive; ?>" href="phonebook.php"><em class="fa fa-phone-square"></em> Phone book</a></li>
+        <li class="nav-item"><a class="nav-link {{ $phoneBookActive }} " href="{{ route('phonebook') }}"><em class="fa fa-phone-square"></em> Phone book</a></li>
         <li class="nav-item"><a class="nav-link <?php //echo $reviewActive; ?>" href="review.php"><em class="fa fa-pencil-square-o"></em> Leave a review</a></li>
         <li class="nav-item"><a class="nav-link <?php //echo $passwordActive; ?>" href="password.php"><em class="fa fa-clone"></em> Password</a></li>
         <a href="{{ route('logout') }}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a>

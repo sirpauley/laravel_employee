@@ -18,7 +18,7 @@
   <div class="card-block">
 
     <!-- Button to Open the Modal -->
-    <a href="{{ route('new employee') }}"><button class="btn btn-sm btn-info pull-left" type="button"><em class="fa fa-user"></em> ADD NEW EMPLOYEE</button></a>
+    <a href="{{ route('new employee') }}"><button class="btn btn-sm btn-success pull-left" type="button"><em class="fa fa-user"></em> ADD NEW EMPLOYEE</button></a>
   </div>
 </div>
 
@@ -30,7 +30,7 @@
           <tr>
             <th>CONTROL</th>
             <th>NAME</th>
-            <th>SURNAME</th>
+            <th>USERNAME</th>
             <th>EMPLOYED DATE</th>
             <th>BIRTHDAY</th>
             <th>TELEPHONE</th>
@@ -54,8 +54,8 @@
 
                  <td>{{$employee->name}}</td>
                  <td>{{$employee->username}}</td>
-                 <td>{{$employee->created}}</td>
-                 <td>{{$employee->birthday}}</td>
+                 <td>{{ \Carbon\Carbon::parse($employee->birthday)->format('d/m/Y') }}</td>
+                 <td>{{ \Carbon\Carbon::parse($employee->created)->format('d/m/Y')}}</td>
                  <td>{{$employee->tell}}</td>
 
                  @if($employee->admin_right == 1)
