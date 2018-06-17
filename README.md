@@ -17,5 +17,10 @@ same as my SES project, but with the Larvel frame work:
 + Bootstrap4 DataTable [https://datatables.net/]
 + laravel 5.6
 
+## Functions
++ employee list/edit/add
++ phonebook of employees (email/tell) search
++ password reset by admin users
+
 ## Some info
 + password uses laravel HASH

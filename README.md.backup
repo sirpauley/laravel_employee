@@ -15,7 +15,9 @@ same as my SES project, but with the Larvel frame work:
 + Google jQuery library CND
 + Medialoot template [https://medialoot.com/preview/frame/bootstrap-4-dashboard.html]
 + Bootstrap4 DataTable [https://datatables.net/]
-+ la
++ laravel 5.6
+
+## Functions
 
 ## Some info
 + password uses laravel HASH

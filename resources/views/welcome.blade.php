@@ -71,6 +71,7 @@
                     @auth
                     <a href="{{ route('employee') }}">Employee</a>
                     <a href="{{ route('phonebook') }}">Phonebook</a>
+                    <a href="{{ route('review')}}">REVIEW</a>
 
                     @if (Auth::user()->admin_right == true)
                       <a href="{{ route('password') }}">Password</a>
@@ -92,7 +93,7 @@
                     <a href="{{ route('employee') }}">Employee</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="{{ route('phonebook') }}">Phonebook</a>
-                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="{{ route('review')}}">REVIEW</a>
 
                     @if (Auth::user()->admin_right == true)
                       <a href="{{ route('password') }}">Password</a>

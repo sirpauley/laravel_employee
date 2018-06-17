@@ -66,6 +66,13 @@ Route::get('/phonebook/details/{id}', ['middleware' => 'isLoggedin', 'uses' => '
 /************************************************************
 * LEAVE A REVIEWs
 ************************************************************/
+//phonebook of employees table
+Route::get('/review', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@index',])->name('review');
+
+//like
+Route::get('/review/like/{id}', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@like',])->name('like');
+//unlike
+Route::get('/review/unlike/{id}', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@unlike',])->name('unlike');
 
 /************************************************************
 * PASSWORD
