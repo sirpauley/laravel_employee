@@ -58,7 +58,7 @@ Route::post('/employee/edit/{id}', ['middleware' => 'isLoggedin', 'uses' => 'emp
 /************************************************************
 * PHONEBOOK
 ************************************************************/
-//employee table & controls
+//phonebook of employees table
 Route::get('/phonebook', ['middleware' => 'isLoggedin', 'uses' => 'phonebookController@index',])->name('phonebook');
 
 Route::get('/phonebook/details/{id}', ['middleware' => 'isLoggedin', 'uses' => 'phonebookController@details',])->name('phonebook details');
@@ -70,3 +70,11 @@ Route::get('/phonebook/details/{id}', ['middleware' => 'isLoggedin', 'uses' => '
 /************************************************************
 * PASSWORD
 ************************************************************/
+//phonebook of employees table
+Route::get('/password', ['middleware' => 'isLoggedin', 'uses' => 'passwordResetController@index',])->name('password');
+
+//edit password
+Route::get('/password/reset/{id}', ['middleware' => 'isLoggedin', 'uses' => 'passwordResetController@reset',])->name('password reset');
+
+//save new password for user
+Route::post('/password/reset/{id}', ['middleware' => 'isLoggedin', 'uses' => 'passwordResetController@saveReset',])->name('password reset');

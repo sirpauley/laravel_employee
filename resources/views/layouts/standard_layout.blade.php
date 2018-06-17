@@ -80,8 +80,11 @@
 				@break
 
 			<!-- reviews -->
-			<!-- password -->
 
+			@case('password')
+			@case('password reset')
+				{{ $passwordActive = 'active'}}
+				@break
     @endswitch
 
     <nav class="sidebar col-xs-12 col-sm-4 col-lg-3 col-xl-2">
@@ -93,8 +96,12 @@
         <li class="nav-item"><a class="nav-link <?php //echo $statisticActive; ?>" href="statistics.php"><em class="fa fa-line-chart"></em> Statistics</a></li>
         <li class="nav-item"><a class="nav-link {{ $phoneBookActive }} " href="{{ route('phonebook') }}"><em class="fa fa-phone-square"></em> Phone book</a></li>
         <li class="nav-item"><a class="nav-link <?php //echo $reviewActive; ?>" href="review.php"><em class="fa fa-pencil-square-o"></em> Leave a review</a></li>
-        <li class="nav-item"><a class="nav-link <?php //echo $passwordActive; ?>" href="password.php"><em class="fa fa-clone"></em> Password</a></li>
-        <a href="{{ route('logout') }}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a>
+
+				@if (Auth::user()->admin_right == true)
+					<li class="nav-item"><a class="nav-link {{ $passwordActive }} " href=" {{ route('password') }} "><em class="fa fa-clone"></em> Password</a></li>
+				@endif
+				
+				<a href="{{ route('logout') }}" class="logout-button"><em class="fa fa-power-off"></em> Signout</a>
       </ul>
     </nav>
 
