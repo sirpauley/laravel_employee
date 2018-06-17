@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace SES\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 //Addition added
-use App\Employee;
+use SES\Employee;
 
 class phonebookController extends Controller
 {
