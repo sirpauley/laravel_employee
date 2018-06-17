@@ -46,7 +46,9 @@
                <tr>
 
                  <td>
+                   @if(Auth::user()->admin_right == 1)
                    <a href="{{ route('employee edit', $employee->id) }}"><button class='btn btn-circle btn-warning'><em class='fa fa-pencil-square-o'></em></button></a>
+                   @endif
                    <a href="{{ route('employee details', $employee->id) }}"><button class='btn btn-circle btn-info'><em class='fa fa-info-circle'></em></button></a>
                  </td>
 
