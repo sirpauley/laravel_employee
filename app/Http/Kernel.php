@@ -59,6 +59,6 @@ class Kernel extends HttpKernel
         'guest' => \SES\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'isLoggedin' => \SES\Http\Middleware\IsloggedinMiddleware::class,
+        'isLoggedin' => \SES\Http\Middleware\IsLoggedinMiddleware::class,
     ];
 }

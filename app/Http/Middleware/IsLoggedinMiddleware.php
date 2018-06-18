@@ -21,7 +21,7 @@ class IsLoggedinMiddleware
     public function handle($request, Closure $next)
     {
 
-      if(empty(Auth::user()->username)){
+      if(!Auth::check()){
         return redirect()->route('login');
       }else{
         return $next($request);
