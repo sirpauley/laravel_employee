@@ -12,7 +12,7 @@ same as my SES project, but with the Larvel frame work:
 5. login and enjoy
 
 ## Current database design
-![data base image](public/img/database_design.jpg)
+![data base image](public/img/laravel_employee_db_planning.jpg)
 
 ## External libraries used
 + bootstrap 4 CND version [https://getbootstrap.com/]
