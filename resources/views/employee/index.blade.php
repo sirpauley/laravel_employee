@@ -6,7 +6,7 @@
   @if(Session::has('msg'))
   <div class="container">
   <div class="row">
-    <div class="col-4 alert">
+    <div class="col-12 col-md-4 alert">
         <div class="alert alert-success"><p>{{Session::get('msg')}}</p></div>
     </div>
   </div>
@@ -31,8 +31,8 @@
             <th>CONTROL</th>
             <th>NAME</th>
             <th>USERNAME</th>
-            <th>EMPLOYED DATE</th>
             <th>BIRTHDAY</th>
+            <th>EMPLOYED DATE</th>
             <th>TELEPHONE</th>
             <th>ADMIN</th>
           </tr>

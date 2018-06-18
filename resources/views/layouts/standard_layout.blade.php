@@ -31,32 +31,6 @@
 
     <!-- MENU -->
 
-<?php
-// switch ($header) {
-//   case 'EMPLOYEES':
-//   case 'EMPLOYEE EDIT PAGE':
-//   case 'EMPLOYEES INFORMATION':
-//     $employeeActive = 'active';
-//     break;
-//   case 'STATISTICS':
-//     $statisticActive = 'active';
-//     break;
-//   case 'JOB LEVEL':
-//   case 'JOB LEVEL INFORMATION':
-//   case 'JOB LEVEL EDIT':
-//     $jobLevelActive = 'active';
-//     break;
-//   case 'PHONEBOOK':
-//     $phoneBookActive = 'active';
-//     break;
-//   case 'PASSWORD UPDATE':
-//     $passwordActive = 'active';
-//     break;
-//   case 'EMPLOYEE REVIEWs':
-//     $reviewActive = 'active';
-//     break;
-// }
-?>
 
     {{ $employeeActive    = '' }}
     {{ $statisticActive   = '' }}
@@ -65,14 +39,17 @@
     {{ $passwordActive    = '' }}
 
     @switch(Route::currentRouteName())
-      @case('employee')
+
+			@case('employee')
 			@case('new employee')
 			@case('employee details')
 			@case('employee edit')
           {{ $employeeActive = 'active' }}
           @break
 
-				<!-- STATISTICS -->
+			@case('statistics')
+          {{ $statisticActive = 'active' }}
+          @break
 
 			@case('phonebook')
 			@case('phonebook details')

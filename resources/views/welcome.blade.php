@@ -49,9 +49,15 @@
                 font-size: 84px;
             }
 
+            @media only screen and (max-width: 600px) {
+              .title {
+                  font-size: 54px;
+              }
+            }
+
             .links > a {
                 color: #636b6f;
-                padding: 0 25px;
+                padding: 0 50px;
                 font-size: 12px;
                 font-weight: 600;
                 letter-spacing: .1rem;

@@ -8,8 +8,8 @@
 
     @if($errors->any())
       <div class="row">
-        <div class="col-4"> </div>
-        <div class="col-4 align-self-center alert alert-danger">
+        <div class="col-12 col-md-4"> </div>
+        <div class="col-12 col-md-4 align-self-center alert alert-danger">
         @foreach($errors->all() as $error)
             <p>{{ $error }}</p>
         @endforeach()

@@ -4,16 +4,20 @@
 
 <h3>PLEASE LEAVE A POSITIVE MESSAGE FOR <em> {{$employee->name}}</em></h3>
 
-@if(Session::has('msg'))
 <div class="container">
-<div class="row">
-  <div class="col-4 alert">
-      <div class="alert alert-success"><p>{{Session::get('msg')}}</p></div>
-  </div>
-</div>
+
+    @if($errors->any())
+      <div class="row">
+        <div class="col-12 col-md-4"> </div>
+        <div class="col-12 col-md-4 align-self-center alert alert-danger">
+        @foreach($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach()
+        </div>
+      </div>
+    @endif
 
 </div>
-@endif
 
 <!-- FORM FOR NEW COMMENT-->
 {{ Form::open(array('route' => 'Postcomment')) }}
@@ -34,7 +38,7 @@
 <br>
 
 <div class="row col-12">
-  <button type="submit" class="pull-left col-6 col-md-2 btn btn-success "><em class="fa fa-check"></em>SAVE MESSAGE</button>
+  <button type="submit" class="pull-left col-7 col-md-2 btn btn-success "><em class="fa fa-check"></em>SAVE MESSAGE</button>
 
   <div class="col-3"><a href="{{route('review')}}" class="pull-left "><button type="button" class="btn btn-warning"><em class="fa fa-arrow-left"></em> Back</button></a></div>
 </div>
