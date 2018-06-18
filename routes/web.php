@@ -54,6 +54,9 @@ Route::post('/employee/edit/{id}', ['middleware' => 'isLoggedin', 'uses' => 'emp
 /************************************************************
 * STATISTICS
 ************************************************************/
+//employee table & controls
+Route::get('/statistics', ['middleware' => 'isLoggedin', 'uses' => 'statisticsController@index',])->name('statistics');
+
 
 /************************************************************
 * PHONEBOOK
@@ -73,6 +76,10 @@ Route::get('/review', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentCon
 Route::get('/review/like/{id}', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@like',])->name('like');
 //unlike
 Route::get('/review/unlike/{id}', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@unlike',])->name('unlike');
+
+//comment
+Route::get('/review/comment/{id}', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@comment',])->name('comment');
+Route::post('/review/comment', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@saveComment',])->name('Postcomment');
 
 /************************************************************
 * PASSWORD

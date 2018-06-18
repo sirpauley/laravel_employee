@@ -15,7 +15,12 @@ class LoginController extends Controller
   public function showLogin()
   {
       // show the form
-      return View::make('login');
+      if(!Auth::check()){
+        return View::make('login');
+      }else{
+        return redirect()->route('welcome');
+      }
+
   }
 
   public function doLogin(Request $request)
@@ -48,6 +53,6 @@ class LoginController extends Controller
   public function doLogout(){
     Auth::logout(); //logout
     return redirect()->route('login');
-  }//dologout  
+  }//dologout
 
 }

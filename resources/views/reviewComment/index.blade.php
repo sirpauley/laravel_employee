@@ -31,7 +31,7 @@
                   <td><a href="{{route('like', $employee->id)}}"><button class='btn btn-circle btn-secondary'><em class='fa fa-thumbs-o-up'></em></button></a></td>
                  @endif
                 <td>
-                  <a href='review_employee.php?id='><button class='btn btn-circle btn-success'><em class='fa fa fa-comments'></em></button></a>
+                  <a href="{{route('comment', $employee->id ) }}" ><button class='btn btn-circle btn-success'><em class='fa fa fa-comments'></em></button></a>
                 </td>
 
                  <td>{{$employee->name}}</td>

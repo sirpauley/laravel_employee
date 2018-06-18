@@ -72,7 +72,7 @@
           {{ $employeeActive = 'active' }}
           @break
 
-			<!-- STATISTICS -->
+				<!-- STATISTICS -->
 
 			@case('phonebook')
 			@case('phonebook details')
@@ -80,6 +80,7 @@
 				@break
 
 			@case('review')
+			@case('comment')
 				{{$reviewActive = 'active'}}
 				@break
 			@case('password')
@@ -94,7 +95,7 @@
       <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><em class="fa fa-bars"></em></a>
       <ul class="nav nav-pills flex-column sidebar-nav">
         <li class="nav-item"><a class="nav-link {{ $employeeActive }}" href="{{ route('employee') }}"><em class="fa fa-user"></em> Employees <span class="sr-only">(current)</span></a></li>
-        <li class="nav-item"><a class="nav-link <?php //echo $statisticActive; ?>" href="statistics.php"><em class="fa fa-line-chart"></em> Statistics</a></li>
+        <li class="nav-item"><a class="nav-link {{$statisticActive}}" href="{{route('statistics')}}"><em class="fa fa-line-chart"></em> Statistics</a></li>
         <li class="nav-item"><a class="nav-link {{ $phoneBookActive }} " href="{{ route('phonebook') }}"><em class="fa fa-phone-square"></em> Phone book</a></li>
         <li class="nav-item"><a class="nav-link {{$reviewActive}}" href="{{ route('review') }}"><em class="fa fa-pencil-square-o"></em> Leave a review</a></li>
 
