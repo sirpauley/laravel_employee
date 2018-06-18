@@ -9,6 +9,8 @@ class employeeSeeder extends Seeder
      *
      * @return void
      */
+     
+     //This is to create the first admin user
     public function run()
     {
 

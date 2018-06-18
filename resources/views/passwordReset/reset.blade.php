@@ -2,6 +2,8 @@
 
 @section('content')
 
+<!-- RESET password only accesable to admin users-->
+
 <div class="container">
 
     @if($errors->any())

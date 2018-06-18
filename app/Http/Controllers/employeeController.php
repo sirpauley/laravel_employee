@@ -12,6 +12,9 @@ use Hash;
 class employeeController extends Controller
 {
 
+  /************************************************************
+  * index page view
+  ************************************************************/
   public function index(){
     //fetch all employees
     $employees = Employee::orderBy('created','desc')->get();
@@ -20,11 +23,17 @@ class employeeController extends Controller
   return view('employee.index', ['employees' => $employees]);
   }
 
+  /************************************************************
+  * show add page
+  ************************************************************/
   public function add(){
     //pass employees data to view and load list view
     return view('employee.add');
   }
 
+  /************************************************************
+  * add employee to database
+  ************************************************************/
   public function addEmployee(Request $request){
     //return view('employee.add');
 
@@ -69,6 +78,9 @@ class employeeController extends Controller
 
   }
 
+  /************************************************************
+  * details page
+  ************************************************************/
   public function details($id){
     //fetch employee data
     $employee = Employee::find($id);
@@ -78,6 +90,9 @@ class employeeController extends Controller
 
   }
 
+  /************************************************************
+  * so edit page
+  ************************************************************/
   public function editPage($id){
     //fetch employee data
     $employee = Employee::find($id);
@@ -87,6 +102,9 @@ class employeeController extends Controller
 
   }
 
+  /************************************************************
+  * saveEdit change to database
+  ************************************************************/
   public function saveEdit($id, Request $request){
 
     /*************VALIDATION**************/

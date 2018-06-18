@@ -50,7 +50,7 @@
 <br>
 <div class="row">
     <div class="col">
-      {{ Form::submit('Submit!') }}
+      {{ Form::submit('Login!') }}
     </div>
 </div>
 

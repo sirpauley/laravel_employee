@@ -15,17 +15,12 @@ use DB;
 class statisticsController extends Controller
 {
 
+  /************************************************************
+  * index
+  ************************************************************/
   public function index(){
 
-      // $comments = ReviewComment::orderBy('created','desc')->where('employee_id', '=', $id)->get();
-      // $employee = Employee::where('id', '=', $id)->first();
-      //
-      // $employees = Employee::orderBy('created','desc')->get();
-      // $employeesByID = array();
-      // foreach ($employees as $key => $value) {
-      //   $employeesByID[$value['id']] = $value['name'];
-      // }
-
+      //gathering information ready for use on web page
       $birthdays      = Employee::orderBy('birthday','asc')->whereMonth('birthday', date('m'))->get();
       $totalEmployees = Employee::orderBy('created','asc')->count();
       $totalComments  = ReviewComment::orderBy('created','desc')->count();
@@ -48,9 +43,6 @@ class statisticsController extends Controller
       $Length = (count($topTenList) < 10)? count($topTenList) : 10;
       $topTenList = array_slice($topTenList, 0, $Length);
 
-
-
-      //return view('statistics.index', ['birthdays' => $birthdays, 'employee' => $employee, 'employeesByID'=> $employeesByID]);
     return view('statistics.index', [
                                     'birthdays' => $birthdays,
                                     'totalEmployees' => $totalEmployees,
@@ -58,6 +50,7 @@ class statisticsController extends Controller
                                     'totalLikes' => $totalLikes,
                                     'topTenList' => $topTenList
                                   ]);
-  }
+
+  }//index function
 
 }

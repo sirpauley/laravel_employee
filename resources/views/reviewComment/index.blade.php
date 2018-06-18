@@ -7,7 +7,6 @@
       <table id="employeeTable" class="display table table-striped">
         <thead>
 
-
           <tr>
             <th>LIKE</th>
             <th>REVIEW</th>
@@ -43,6 +42,7 @@
 
             @endforeach
           @else
+          <!-- if no data for table fill with null -->
             <tr>
               <td>NULL</td>
               <td>NULL</td>

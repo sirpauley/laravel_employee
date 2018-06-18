@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Input;
 class LoginController extends Controller
 {
 
+  /************************************************************
+  * showLogin
+  ************************************************************/
   public function showLogin()
   {
       // show the form
@@ -23,6 +26,9 @@ class LoginController extends Controller
 
   }
 
+  /************************************************************
+  * doLogin
+  ************************************************************/
   public function doLogin(Request $request)
   {
 

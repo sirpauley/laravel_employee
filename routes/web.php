@@ -15,12 +15,10 @@
 * LOGIN
 ************************************************************/
 Route::get('/', array('uses' => 'LoginController@showLogin'));
-
 // route to show the login form
 Route::get('/login', array('as' => 'login','uses' => 'LoginController@showLogin'));
 // route to process the form
 Route::post('/login', array('uses' => 'LoginController@doLogin'));
-
 Route::get('/welcome', ['as' => 'welcome', 'middleware' => 'isLoggedin',  function(){
   return view('welcome');
 }]);
@@ -34,7 +32,6 @@ use App\Employee;
 
 //employee table & controls
 Route::get('/employee', ['middleware' => 'isLoggedin', 'uses' => 'employeeController@index',])->name('employee');
-
 //add a new employee
 Route::get('/employee/add', ['middleware' => 'isLoggedin', 'uses' => 'employeeController@add',])->name('new employee');
 
@@ -57,13 +54,11 @@ Route::post('/employee/edit/{id}', ['middleware' => 'isLoggedin', 'uses' => 'emp
 //employee table & controls
 Route::get('/statistics', ['middleware' => 'isLoggedin', 'uses' => 'statisticsController@index',])->name('statistics');
 
-
 /************************************************************
 * PHONEBOOK
 ************************************************************/
 //phonebook of employees table
 Route::get('/phonebook', ['middleware' => 'isLoggedin', 'uses' => 'phonebookController@index',])->name('phonebook');
-
 Route::get('/phonebook/details/{id}', ['middleware' => 'isLoggedin', 'uses' => 'phonebookController@details',])->name('phonebook details');
 
 /************************************************************
@@ -71,12 +66,10 @@ Route::get('/phonebook/details/{id}', ['middleware' => 'isLoggedin', 'uses' => '
 ************************************************************/
 //phonebook of employees table
 Route::get('/review', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@index',])->name('review');
-
 //like
 Route::get('/review/like/{id}', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@like',])->name('like');
 //unlike
 Route::get('/review/unlike/{id}', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@unlike',])->name('unlike');
-
 //comment
 Route::get('/review/comment/{id}', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@comment',])->name('comment');
 Route::post('/review/comment', ['middleware' => 'isLoggedin', 'uses' => 'reviewCommentController@saveComment',])->name('Postcomment');
@@ -86,9 +79,7 @@ Route::post('/review/comment', ['middleware' => 'isLoggedin', 'uses' => 'reviewC
 ************************************************************/
 //phonebook of employees table
 Route::get('/password', ['middleware' => 'isLoggedin', 'uses' => 'passwordResetController@index',])->name('password');
-
 //edit password
 Route::get('/password/reset/{id}', ['middleware' => 'isLoggedin', 'uses' => 'passwordResetController@reset',])->name('password reset');
-
 //save new password for user
 Route::post('/password/reset/{id}', ['middleware' => 'isLoggedin', 'uses' => 'passwordResetController@saveReset',])->name('password reset');

@@ -11,6 +11,9 @@ use Hash;
 class passwordResetController extends Controller
 {
 
+  /************************************************************
+  * index
+  ************************************************************/
   public function index(){
     //fetch all employees
     $employees = Employee::orderBy('created','desc')->get();
@@ -19,6 +22,9 @@ class passwordResetController extends Controller
     return view('passwordReset.index', ['employees' => $employees]);
   }
 
+  /************************************************************
+  * reset page call
+  ************************************************************/
   public function reset($id){
     //fetch employee data
     $employee = Employee::find($id);
@@ -27,6 +33,9 @@ class passwordResetController extends Controller
   return view('passwordReset.reset', ['employee' => $employee]);
   }
 
+  /************************************************************
+  * reset the password action with database
+  ************************************************************/
   public function saveReset($id, Request $request){
 
     /*************VALIDATION**************/

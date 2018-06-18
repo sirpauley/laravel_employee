@@ -10,6 +10,9 @@ use SES\Employee;
 class phonebookController extends Controller
 {
 
+  /************************************************************
+  * index
+  ************************************************************/
   public function index(){
     //fetch all employees
     $employees = Employee::orderBy('created','desc')->get();
@@ -18,6 +21,9 @@ class phonebookController extends Controller
   return view('phonebook.index', ['employees' => $employees]);
   }
 
+  /************************************************************
+  * details
+  ************************************************************/
   public function details($id){
     //fetch employee data
     $employee = Employee::find($id);
@@ -25,7 +31,5 @@ class phonebookController extends Controller
     //pass employees data to view and load list view
   return view('phonebook.details', ['employee' => $employee]);
   }
-
-
 
 }

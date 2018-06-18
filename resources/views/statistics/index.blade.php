@@ -1,4 +1,4 @@
-@extends('layouts.standard_layout', ['hasTable' => true])
+@extends('layouts.standard_layout', ['hasTable' => false])
 
 @section('content')
 
@@ -17,8 +17,8 @@
 
 <h2>UPCOMMING BIRTHDAYS</h2>
 
+<!--Birthday cards-->
 @php($key = 0)
-
 @foreach($birthdays as $birthday)
 
   @if($key == 0)
@@ -61,7 +61,6 @@
   @php($key++)
 
 @endforeach
-
   </div>
 
   <br>
@@ -71,7 +70,7 @@
 
     <!-- Total employees -->
     <div class="col-sx-12 col-md-4">
-			<div class="card md-12 $colorArray[5]" >
+			<div class="card md-12 {{$colorArray[5]}}" >
 				<h5 class="card-header">Total employees </h5>
 				<div class="card-body">
 						<p class="card-text"><h1>{{$totalEmployees}}</h1></p>
@@ -104,7 +103,7 @@
 <br>
 
   <!-- Top 10 liked employees-->
-
+<div class="row">
   <div class='col-sx-12 col-md-4'>
     <div class='card md-12 {{$colorArray[5]}}' >
       <h5 class='card-header'>TOP 10 LIKED</h5>
@@ -116,7 +115,7 @@
       </div>
     </div>
   </div>
-
+</div>
 
 
 <br>

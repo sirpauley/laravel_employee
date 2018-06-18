@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+<!-- error message if any -->
   @if(Session::has('msg'))
   <div class="container">
   <div class="row">

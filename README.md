@@ -8,7 +8,11 @@ same as my SES project, but with the Larvel frame work:
 3. ``` php artisan db:seed ``` Add an ADMIN user to database
  + username: ```admin```
  + Password: ```admin```
-4. 
+4. php artisan serve
+5. login and enjoy
+
+## Current database design
+![data base image](public/img/database_design.jpg)
 
 ## External libraries used
 + bootstrap 4 CND version [https://getbootstrap.com/]
@@ -18,10 +22,11 @@ same as my SES project, but with the Larvel frame work:
 + laravel 5.6
 
 ## Functions
-+ employee list/edit/add
++ Employee list/edit/add
++ Statistics of employees
 + phonebook of employees (email/tellephone) search
-+ Employee review (like)
-+ password reset by admin users
++ Employee review (like/comment)
++ Password reset by admin users
 
 ## Some info
 + password uses laravel HASH
